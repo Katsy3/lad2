@@ -1,6 +1,6 @@
 // --- Частина 1 ---
 let studentName = "Рей";              // string
-const studentAge = 33;                  // number
+const studentAge = 23;                  // number
 let isStudying = "так";                 // string (змінено з boolean на string)
 let favoriteSubject = "Програмування";  // string
 let currentGrade = 85;                  // number
