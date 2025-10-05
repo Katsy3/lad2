@@ -72,4 +72,4 @@ document.getElementById("categoryInfo").innerHTML = `
 
 document.getElementById("ageCategoryInfo").innerHTML = `
   <p>${ageCategory}</p>
-;
+`;
