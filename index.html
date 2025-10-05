@@ -1,36 +1,72 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <nav>
-    <a href="index.html">Головна</a> | 
-    <a href="club.html">Комп'ютерний клуб</a>
-  </nav>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Комп'ютерний клуб "CyberZone"</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2</title>
+    <link rel="stylesheet" href="lab2.css">
 </head>
 <body>
-  <h1>Комп'ютерний клуб "CyberZone"</h1>
-  <h2>Оцінка роботи працівників</h2>
+    <!-- Заголовок сторінки -->
+    <h1>Інформація про студента</h1>
 
-  <div class="worker" id="worker1">
-    <h3>Працівник: Олександр Ковалenko</h3>
-    <p>Роль: Технічний адміністратор</p>
-    <p><span>Оцінка:</span> <span id="rating1">★★★★★ (5/5)</span></p>
-    <input type="number" id="input1" min="1" max="5" value="5" onchange="updateRating('worker1', 'input1', 'rating1')"> 
-    <button onclick="updateRating('worker1', 'input1', 'rating1')">Оновити</button>
-  </div>
+    <!-- Форма для введення даних студента -->
+    <div class="container">
+        <h2>Введіть дані студента</h2>
+        <div class="input-group">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" placeholder="Введіть ім'я">
+        </div>
+        <div class="input-group">
+            <label for="surname">Прізвище:</label>
+            <input type="text" id="surname" placeholder="Введіть прізвище">
+        </div>
+        <div class="input-group">
+            <label for="age">Вік:</label>
+            <input type="number" id="age" placeholder="Введіть вік">
+        </div>
+        <div class="input-group">
+            <label for="studying">Чи навчається? (так/ні):</label>
+            <input type="text" id="studying" placeholder="Введіть так або ні">
+        </div>
+        <div class="input-group">
+            <label for="subject">Улюблений предмет:</label>
+            <input type="text" id="subject" placeholder="Введіть улюблений предмет">
+        </div>
+        <div class="input-group">
+            <label for="grade1">Оцінка 1:</label>
+            <input type="number" id="grade1" placeholder="Введіть оцінку">
+        </div>
+        <div class="input-group">
+            <label for="grade2">Оцінка 2:</label>
+            <input type="number" id="grade2" placeholder="Введіть оцінку">
+        </div>
+        <div class="input-group">
+            <label for="grade3">Оцінка 3:</label>
+            <input type="number" id="grade3" placeholder="Введіть оцінку">
+        </div>
+        <button onclick="processStudentData()">Обробити дані</button>
+        <div id="error" class="error"></div>
+    </div>
 
-  <div class="worker" id="worker2">
-    <h3>Працівник: Дмитро Шевченко</h3>
-    <p>Роль: Менеджер залу</p>
-    <p><span>Оцінка:</span> <span id="rating2">★★★★☆ (4/5)</span></p>
-    <input type="number" id="input2" min="1" max="5" value="4" onchange="updateRating('worker2', 'input2', 'rating2')"> 
-    <button onclick="updateRating('worker2', 'input2', 'rating2')">Оновити</button>
-  </div>
+    <!-- Блок для виведення основної інформації -->
+    <div class="container output" id="studentInfo">
+        <h2>Основна інформація</h2>
+        <p id="basicInfo"></p>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- Блок для виведення оцінок -->
+    <div class="container output" id="gradesInfo">
+        <h2>Оцінки та середній бал</h2>
+        <p id="grades"></p>
+    </div>
+
+    <!-- Блок для виведення категорії -->
+    <div class="container output" id="categoryInfo">
+        <h2>Категорія студента</h2>
+        <p id="category"></p>
+    </div>
+
+    <script src="lab2.js"></script>
 </body>
 </html>
