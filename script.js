@@ -1,86 +1,75 @@
-// Оголошення змінних
-let studentName = "Олег";
-let studentSurname = "Коваленко";
-const studentAge = 22;
-let isStudying = "так";
-let favoriteSubject = "Математика";
-let grades = [60, 80, 60]; // Приклад оцінок для тесту
+// --- Частина 1 ---
+let studentName = "Рей";              // string
+const studentAge = 3;                  // number
+let isStudying = "так";                 // string (змінено з boolean на string)
+let favoriteSubject = "Програмування";  // string
+let currentGrade = 85;                  // number
 
-// Виведення типів змінних у консоль
-console.log("studentName:", studentName, typeof studentName);
-console.log("studentAge:", studentAge, typeof studentAge);
-console.log("isStudying:", isStudying, typeof isStudying);
-console.log("favoriteSubject:", favoriteSubject, typeof favoriteSubject);
-console.log("grades:", grades, typeof grades);
+console.log(studentName, typeof studentName);
+console.log(studentAge, typeof studentAge);
+console.log(isStudying, typeof isStudying);
+console.log(favoriteSubject, typeof favoriteSubject);
+console.log(currentGrade, typeof currentGrade);
 
-// Обчислення середнього балу
-let averageGrade = grades.length > 0 ? grades.reduce((a, b) => a + b, 0) / grades.length : NaN;
+// --- Частина 2 ---
+let grade1 = 75, grade2 = 75, grade3 = 80;
+let averageGrade = (grade1 + grade2 + grade3) / 3;
 
-// Визначення категорії за оцінками
 let category = "";
-if (isNaN(averageGrade)) {
-    category = "Не вказано";
-} else if (averageGrade >= 90) {
-    category = "Відмінник";
+if (averageGrade >= 90) {
+  category = "Відмінник";
 } else if (averageGrade >= 80) {
-    category = "Хорошист";
+  category = "Добре";
 } else if (averageGrade >= 60) {
-    category = "Трійочник";
+  category = "Погано";
 } else {
-    category = "Двійочник";
+  category = "Незадовільно";
 }
 
-// Визначення вікової категорії
-let ageCategory = isNaN(studentAge) ? "Не вказано" : 
-    (studentAge < 18 ? "Неповнолітній студент" : 
-     (studentAge <= 25 ? "Молодий студент" : "Зрілий студент"));
+let ageCategory = "";
+if (studentAge < 18) {
+  ageCategory = "Неповнолітній студент";
+} else if (studentAge <= 25) {
+  ageCategory = "Молодий студент";
+} else {
+  ageCategory = "Зілий студент";
+}
 
-// Операції зі строками
-let fullName = studentName + (studentSurname ? " " + studentSurname : "");
-let containsProgram = favoriteSubject.toLowerCase().includes("програм");
-let upperCaseName = studentName.toUpperCase();
-let nameLength = studentName.length;
-
-// Математичні операції
-let minGrade = grades.length > 0 ? Math.min(...grades) : NaN;
-let maxGrade = grades.length > 0 ? Math.max(...grades) : NaN;
-let gradeDifference = !isNaN(minGrade) && !isNaN(maxGrade) ? maxGrade - minGrade : NaN;
-let nextAge = !isNaN(studentAge) ? studentAge + 1 : NaN;
-let successPercent = !isNaN(averageGrade) ? (averageGrade / 100) * 100 : NaN;
-
-// Виведення в консоль
+// --- Частина 3 ---
+let fullName = studentName + " Бредбері"; 
 console.log("Повне ім'я:", fullName);
-console.log("Містить 'програм':", containsProgram);
-console.log("Ім'я у верхньому регістрі:", upperCaseName);
-console.log("Довжина імені:", nameLength);
-console.log("Різниця оцінок:", gradeDifference);
-console.log("Вік наступного року:", nextAge);
-console.log("Відсоток успішності:", isNaN(successPercent) ? "Не вказано" : successPercent + "%");
-console.log("Категорія:", category);
-console.log("Вікова категорія:", ageCategory);
 
-// Виведення на сторінку
+console.log("Містить слово 'програм':", favoriteSubject.includes("програм"));
+console.log("Ім'я у верхньому регістрі:", studentName.toUpperCase());
+console.log("Довжина імені:", studentName.length);
+
+let minGrade = Math.min(grade1, grade2, grade3);
+let maxGrade = Math.max(grade1, grade2, grade3);
+console.log("Різниця оцінок:", maxGrade - minGrade);
+
+let newAge = studentAge + 1;
+console.log("Вік наступного року:", newAge);
+
+let successPercent = (averageGrade / 100) * 100;
+console.log("Відсоток успішності:", successPercent + "%");
+
+// --- Частина 4 (Вивід на сторінку) ---
 document.getElementById("basicInfo").innerHTML = `
   <p><span>Ім'я:</span> ${fullName}</p>
-  <p><span>Вік:</span> ${isNaN(studentAge) ? "Не вказано" : studentAge}</p>
+  <p><span>Вік:</span> ${studentAge}</p>
   <p><span>Чи навчається:</span> ${isStudying}</p>
   <p><span>Улюблений предмет:</span> ${favoriteSubject}</p>
-  <p><span>Чи є 'програм' у предметі:</span> ${containsProgram ? "Так" : "Ні"}</p>
-  <p><span>Ім'я у верхньому регістрі:</span> ${upperCaseName}</p>
-  <p><span>Довжина імені:</span> ${nameLength}</p>
 `;
 
 document.getElementById("gradesInfo").innerHTML = `
-  <p><span>Оцінки:</span> ${grades.map(g => isNaN(g) ? "Не вказано" : g).join(", ")}</p>
-  <p><span>Середній бал:</span> ${isNaN(averageGrade) ? "Не вказано" : averageGrade.toFixed(2)}</p>
-  <p><span>Різниця між оцінками:</span> ${isNaN(gradeDifference) ? "Не вказано" : gradeDifference}</p>
-  <p><span>Відсоток успішності:</span> ${isNaN(successPercent) ? "Не вказано" : successPercent.toFixed(2)}%</p>
+  <p>Оцінки: ${grade1}, ${grade2}, ${grade3}</p>
+  <p><span>Середній бал:</span> ${averageGrade.toFixed(2)}</p>
 `;
 
 document.getElementById("categoryInfo").innerHTML = `
-  <p><span>Категорія за оцінками:</span> ${category}</p>
+  <p>${category}</p>
 `;
 
 document.getElementById("ageCategoryInfo").innerHTML = `
-  <p><span>Вікова категорія:</span> ${ageCategory}</p>
+  <p>${ageCategory}</p>
 `;
