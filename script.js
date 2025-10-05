@@ -1,4 +1,4 @@
-// --- Частина 1 ---
+
 let studentName = "Рей";              // string
 const studentAge = 33;                  // number
 let isStudying = "так";                 // string (змінено з boolean на string)
@@ -11,7 +11,6 @@ console.log(isStudying, typeof isStudying);
 console.log(favoriteSubject, typeof favoriteSubject);
 console.log(currentGrade, typeof currentGrade);
 
-// --- Частина 2 ---
 let grade1 = 75, grade2 = 75, grade3 = 80;
 let averageGrade = (grade1 + grade2 + grade3) / 3;
 
@@ -32,7 +31,7 @@ if (studentAge < 18) {
 } else if (studentAge <= 25) {
   ageCategory = "Молодий студент";
 } else {
-  ageCategory = "Зрілий студент";
+  ageCategory = "Зілий студент";
 }
 
 // --- Частина 3 ---
