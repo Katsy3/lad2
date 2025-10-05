@@ -1,37 +1,65 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <title>Лабораторна робота №2 - Інформація про студента</title>
-  <link rel="stylesheet" href="lab2.css"> <!-- Підключення CSS, якщо є -->
-</head>
-<body>
-  <h1>Інформація про студента</h1>
 
-  <!-- Блок для основної інформації -->
-  <div class="block" id="info">
-    <h3>Основна інформація</h3>
-    <p id="basicInfo"></p>
-  </div>
+body {
+  font-family: "Times New Roman", serif;
+  background-color: #FFFFFF; /* Білий фон */
+  margin: 20px;
+  line-height: 1.6;
+  color: #000000; /* Чорний текст */
+}
 
-  <!-- Блок для оцінок -->
-  <div class="block" id="grades">
-    <h3>Оцінки</h3>
-    <p id="gradesInfo"></p>
-  </div>
+/* Стилі для заголовка */
+h1 {
+  color: #000000; /* Чорний заголовок */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  padding: 10px;
+  border-bottom: 2px solid #000000; /* Чорна межа знизу */
+}
 
-  <!-- Блок для категорії студента -->
-  <div class="block" id="category">
-    <h3>Категорія студента</h3>
-    <p id="categoryInfo"></p>
-  </div>
+/* Стилі для блоків */
+.block {
+  border: 1px solid #000000; /* Чорна рамка */
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #FFFFFF; /* Білий фон блоків */
+  border-radius: 5px; /* Заокруглення кутів */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Чорна тінь */
+}
 
-  <!-- Блок для вікової категорії -->
-  <div class="block" id="ageCategory">
-    <h3>Вікова категорія</h3>
-    <p id="ageCategoryInfo"></p>
-  </div>
+/* Стилі для підзаголовків усередині блоків */
+.block h3 {
+  margin-top: 0;
+  color: #000000; /* Чорний текст для підзаголовків */
+  font-size: 1.2em;
+}
 
-  <script src="lab2.js"></script> <!-- Підключення вашого JavaScript -->
-</body>
-</html>
+/* Стилі для міток (span) */
+span {
+  font-weight: bold;
+  color: #000000; /* Чорний колір для міток */
+}
+
+/* Стилі для абзаців усередині блоків */
+.block p {
+  margin: 5px 0;
+  color: #000000; /* Чорний текст всередині абзаців */
+}
+
+/* Адаптивність для малих екранів */
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+  .block {
+    padding: 10px;
+    margin: 5px 0;
+  }
+  h1 {
+    font-size: 1.5em;
+    padding: 8px;
+  }
+  .block h3 {
+    font-size: 1.1em;
+  }
+}
