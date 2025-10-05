@@ -1,6 +1,6 @@
 // --- Частина 1 ---
 let studentName = "Рей";              // string
-const studentAge = 3;                  // number
+const studentAge = 23;                  // number
 let isStudying = "так";                 // string (змінено з boolean на string)
 let favoriteSubject = "Програмування";  // string
 let currentGrade = 85;                  // number
@@ -32,7 +32,7 @@ if (studentAge < 18) {
 } else if (studentAge <= 25) {
   ageCategory = "Молодий студент";
 } else {
-  ageCategory = "Зілий студент";
+  ageCategory = "Зрілий студент";
 }
 
 // --- Частина 3 ---
